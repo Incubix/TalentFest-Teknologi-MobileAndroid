@@ -26,41 +26,55 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-          body: ListView.builder(
-              itemCount: 15,
-              itemBuilder: (context, index) {
-                return Container(
-                    padding: const EdgeInsets.all(10),
+        child: Scaffold(
+            body: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return Container(
                     margin: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.green),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.home),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "INCUBIX TALENT FEST 2023",
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                                Text("Mobile Development")
-                              ],
-                            ),
-                          ],
-                        ),
-                        Icon(Icons.person)
-                      ],
-                    ));
-              })),
-    );
+                    height: 100,
+                    width: 100,
+                    color: Colors.amber,
+                    child: const Center(child: Text("INCUBIX")),
+                  );
+                })
+
+            // ListView.builder(
+            //     itemCount: 15,
+            //     itemBuilder: (context, index) {
+            //       return Container(
+            //           padding: const EdgeInsets.all(10),
+            //           margin: const EdgeInsets.all(10),
+            //           decoration: BoxDecoration(
+            //               borderRadius: BorderRadius.circular(10),
+            //               color: Colors.green),
+            //           child: const Row(
+            //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //             children: [
+            //               Row(
+            //                 children: [
+            //                   Icon(Icons.home),
+            //                   SizedBox(
+            //                     width: 10,
+            //                   ),
+            //                   Column(
+            //                     crossAxisAlignment: CrossAxisAlignment.start,
+            //                     children: [
+            //                       Text(
+            //                         "INCUBIX TALENT FEST 2023",
+            //                         style: TextStyle(fontWeight: FontWeight.bold),
+            //                       ),
+            //                       Text("Mobile Development")
+            //                     ],
+            //                   ),
+            //                 ],
+            //               ),
+            //               Icon(Icons.person)
+            //             ],
+            //           ));
+            //     })),
+            ));
   }
 }
